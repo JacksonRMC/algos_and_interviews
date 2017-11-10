@@ -12,7 +12,7 @@
 // If there is more than one mode, return any of the modes.
 
 const Temp = function() {
-  this.temperatures = {};
+  this.temperatures = { };
   this.total = 0;
   this.mean = 0;
   this.number = 0;
