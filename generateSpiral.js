@@ -40,20 +40,29 @@ var generateMatrix = function(n) {
             matrix[j][endRow] = counter;
             counter++;
         };
-        console.log(matrix)
         endRow --;
 
+
+
         if ( startRow < endRow ){
-            for ( let y = endCol ; y >= startCol ; y --){
+            for ( let y = endRow ; y >= startRow ; y --){
                 matrix[endCol][y] = counter;
                 counter++;
             }
             endCol--;
         }
+
+        if ( startCol < endCol ){
+            for ( let g = endCol ; g >= startCol ; g --){
+                matrix[g][startRow] = counter;
+                counter++;
+            }
+            startRow++;
+        }
     };
-    // console.log(matrix)
+
     return matrix;
     
 };
 
-generateMatrix(3);
+console.log(generateMatrix(5));
