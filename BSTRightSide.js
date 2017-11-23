@@ -10,7 +10,7 @@ function BSTRight(root) {
     if(root === null) {
         return result;
     }
-    
+    //Possible to make a recursive solution??
     queue = [];
     queue.push(root);
     
