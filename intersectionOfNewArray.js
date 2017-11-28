@@ -13,3 +13,42 @@
 // and the memory is limited such that you cannot load all elements into the memory at once?
 
 
+function intersection(nums1, nums2){
+	let obj = {};
+	let arr1, arr2
+
+	if( nums1.length < nums2.length ){
+		arr1 = nums1
+		arr2 = nums2
+	} else {
+		arr1 = nums2 
+		arr2 = nums1
+	};
+
+	let result = []
+	let count = arr1.length;
+
+	for ( let i = 0 ; i < arr1.length ; i ++ ){
+		obj[arr1[i]] = obj[arr1[i]] || 0;
+		obj[arr1[i]]++
+	}
+
+	for ( let j = 0 ; j < arr2.length && count !== 0 ; j ++ ){
+		if ( obj[arr2[j]] > 0 ){
+			obj[arr2[j]] --;
+			count --;
+			result.push(arr2[j]);
+		}
+	}
+	return result
+};
+
+let nums1 = [1, 2, 2, 1]
+let nums2 = [2, 2]
+console.log(intersection(nums1, nums2))
+
+
+
+
+
+
