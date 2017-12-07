@@ -9,20 +9,20 @@ BinaryHeap.prototype._getLesserChildIndex = function (parentIndex) {
   }, this);
 
   // compare children nodes to get the index of the lesser of them
-  if (this._compare( this._heap[childIndices[0]], this._heap[childIndices[1]])) {
+  if (this._compare(this._heap[childIndices[0]], this._heap[childIndices[1]])) {
     return childIndices[0];
   } else {
     return childIndices[1];
   }
 };
 
-BinaryHeap.prototype._swap = function (index, parentIndex) {
+BinaryHeap.prototype._swap = function (index , parentIndex) {
   var temp = this._heap[index];
   this._heap[index] = this._heap[parentIndex];
   this._heap[parentIndex] = temp;
 };
 
-BinaryHeap.prototype.insert = function (node) {
+BinaryHeap.prototype.insert = function ( node ) {
   // add node to end of heap
   this._heap.push(node);
 

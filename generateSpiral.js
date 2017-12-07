@@ -1,4 +1,4 @@
-//LEETCODE 59 
+//LEETCODE 59
 
 // Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
 
@@ -12,9 +12,9 @@
 //  [ 7, 6, 5 ]
 // ]
 
-var generateMatrix = function(n) {
+var generateMatrix = function( n ) {
     let matrix = [];
-    
+
     for (let i = 0 ; i < n ; i ++ ){
         let nine = [];
         for ( let j = 0 ; j < n ; j ++ ){
@@ -22,13 +22,13 @@ var generateMatrix = function(n) {
         }
         matrix.push(nine);
     }
-    
+
     let startRow = 0;
     let endRow = n - 1;
     let startCol = 0;
     let endCol = n - 1;
     let counter = 1;
-    
+
     while ( startRow <= endRow && startCol <= endCol ){
         for (let i = startRow ; i <= endRow ; i ++ ){
             matrix[startCol][i] = counter;
@@ -62,7 +62,7 @@ var generateMatrix = function(n) {
     };
 
     return matrix;
-    
+
 };
 
 console.log(generateMatrix(5));

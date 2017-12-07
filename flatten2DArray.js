@@ -4,15 +4,15 @@ Implement an iterator to flatten a 2d vector.
  * Given 2d vector = [[1, 2], [3], [4, 5, 6]]
  * By calling next repeatedly until hasNext returns false.
  * the order of elements returned by next should be: [1,2,3,4,5,6].
- 
+
  [[1,2], [], [], [3, 4], [5, 6, 7]]
- 
+
 TEST CASE:
 Iterator it = list.iterator();
 while(it.hasNext()) {
     print it.next();
 }
- 
+
 */
 
 
@@ -33,7 +33,7 @@ class Iterator {
 	}
 
 	getCurrent () {
-		return this.array[this.current][this.next] ? 
+		return this.array[this.current][this.next] ?
 		this.array[this.current][this.next] : [];
 	}
 
@@ -48,12 +48,12 @@ class Iterator {
 				this.next ++;
 			}
 			return result;
-		} 
+		}
 
 		if ( this.current === this.array.length - 1 ){
 			  let ret = this.array[this.current][this.next];
 			  this.next ++;
-			  return ret	
+			  return ret
 		}
 
 		if ( this.array[this.current][this.next] ){
@@ -64,7 +64,7 @@ class Iterator {
 			return time;
 		}
 
-		if ( this.array[this.current].length === 0 
+		if ( this.array[this.current].length === 0
 			|| !this.array[this.current][this.next + 1]){
 			this.current ++;
 			this.next = 0;
@@ -83,11 +83,11 @@ class Iterator {
 	iterator() {
 		let result = [];
 		while (this.hasNext()){
-			
+
 			for ( let i = 0 ; i < this.array[this.current].length ; i ++ ) {
 				result.push(this.array[this.current][i]);
-			}	
-			
+			}
+
 			this.next();
 		}
 		// this.current = 0;
@@ -105,20 +105,3 @@ console.log(me.nextOne())
 console.log(me.nextOne())
 console.log(me.nextOne())
 console.log(me.nextOne())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
